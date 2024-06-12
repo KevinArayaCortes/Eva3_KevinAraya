@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asus</title>
+    <script type="module" src="./asset/js/firebase.js"></script>
+    <script type="module" src="./asset/js/script.js"></script>
     <link rel="stylesheet" href="asset/css/diseño.css">
-    <script src="asset/js/script.js"></script>
 </head>
 <body class="Oscuro Normal" id="body">
     <ul>
         <li><a href="#QS">¿Quienes somos?</a></li>
         <li><a href="#MV">Misión y Visión</a></li>
         <li><a href="#V">Video</a></li>
-        <li><a href="#FC">Formulario de contacto</a></li>
-        <button type="button" onclick="contraste()" id="contraste">Cambiar contraste</button>        
-        <button type="button" onclick="fuente()" id="fuente">Cambiar fuente</button>        
-
+        <li><a href="#FC">Formulario de contacto</a></li> 
+        <button id="contraste">Cambiar contraste</button>        
+        <button id="fuente">Cambiar fuente</button>       
     </ul>
     <div class="Oscuro" id="QS">
         <h1>¿Quienes somos?</h1>
@@ -49,32 +49,53 @@
             <form>
                 <label for="Nombre">Nombre<span>*</span></label>
                 <input type="text" id="Nombre" name="Nombre" placeholder="Nombre">
+                <p class="noDisplay" id="pNombre">Debe ingresar un nombre</p>
                 <label for="Apellido">Apellido<span>*</span></label>
                 <input type="text" id="Apellido" name="Apellido" placeholder="Apellido">
+                <p class="noDisplay" id="pApellido">Debe ingresar un apellido</p>
                 <label for="Correo">Correo<span>*</span></label>
                 <input type="text" id="Correo" name="Correo" placeholder="Correo">
+                <p class="noDisplay" id="pCorreo">Debe ingresar un correo</p>
                 <label for="Fdn">Fecha de Nacimiento<span>*</span></label>
                 <input type="date" id="Fdn" name="Fdn">
+                <p class="noDisplay" id="pFdn">Debe ingresar una fecha de nacimiento</p>
                 <label for="Genero">Genero<span>*</span></label>
-                <input class="Genero" type="radio" name="G">
+                <input class="Genero" type="radio" id="G" name="G" value="Masculino">
                 <label class="Genero" for="Gm">Masculino</label>
-                <input class="Genero" type="radio" name="G">
+                <input class="Genero" type="radio" id="G" name="G" value="Femenino">
                 <label class="Genero" for="Gf">Femenino</label>
+                <p class="noDisplay" id="pG">Debe seleccionar un genero</p>
                 <label for="Tel">Telefono</label>
                 <input type="text" id="Tel" name="Tel">
+                <p class="noDisplay" id="pTel">Debe ingresar 9 numeros</p>
                 <label for="Select">¿Que desea?<span>*</span></label>
-                <select>
-                    <option value="Tec">Servicio tecnico</option>
-                    <option value="Dud">Dudas</option>
+                <select id="select">
+                    <option value="Servicio tecnico">Servicio tecnico</option>
+                    <option value="Dudas">Dudas</option>
                 </select>
                 <label for="Asunto">Asunto<span>*</span></label>
                 <textarea id="Asunto" placeholder="Escriba su asunto"></textarea>
-                <button type="button" onclick="Validar()" id="Enviar">ENVIAR</button>
+                <p class="noDisplay" id="pAsunto">Debe ingresar un asunto</p>
+                <button class="boton" type="button" id="btnEnviar">ENVIAR</button>
+                <button class="boton" type="button" id="btnActualizar">Actualizar</button>
             </form>
-    </div>
-    <div class="Oscuro" id="imagen">
-        <a href="https://www.instagram.com/asus/?hl=es"><img src="asset/img/asus_logo_icon_247542.png" style="margin: 20px 50px 20px 50px;"></a>
-
-    </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Genero</th>
+                            <th>Telefono</th>
+                            <th>Quisiera</th>
+                            <th>Asunto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+            
+                    </tbody>
+            </div>
 </body>
 </html>

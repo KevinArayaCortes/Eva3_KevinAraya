@@ -10,7 +10,7 @@ li{
     float: left;
 }
 
-li a, #tema{
+li a{
     display: block;
     color: white;
     text-align: center;
@@ -23,7 +23,6 @@ li a:hover{
 }
 
 div{
-    background-color: rgb(46, 46, 46);
     margin: 0px 200px 0px 200px;
 }
 
@@ -58,13 +57,13 @@ input, select, textarea{
     margin: 10px 0px 10px;
 }
 
-button{
+.boton{
     display: block;
-    margin: 10px 633px 10px;
+    margin: auto;
+    margin-bottom: 10px;
     background-color: red;
     color: white;
     border: 0px;
-    padding: 5px 62px 5px 62px;
 }
 
 #imagen{
@@ -103,4 +102,13 @@ button{
 
 .Aumento3{
     font-size: 175%;
+}
+
+#fuente, #contraste{
+    display: inline;
+}
+
+.noDisplay{
+    display: none;
+    color: red;
 }
